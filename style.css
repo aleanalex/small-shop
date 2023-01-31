@@ -1,13 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Spartan", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  letter-spacing: 2px;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+
+
+
+
+body::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+
+
+body::-webkit-scrollbar-thumb {
+background-color: #0fc454;
+border-radius: 12px;
 }
 
 /* Global Styles */
@@ -76,12 +94,19 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 20px 80px;
-  background: #e3e6f3;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  
+  background: #eeeeee23;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   z-index: 999;
   position: sticky;
   top: 0;
   left: 0;
+}
+
+#header img
+{
+  width: 230px;
 }
 
 
@@ -104,14 +129,14 @@ body {
   text-decoration: none;
   font-size: 17px;
   font-weight: 600;
-  color: #282828;
+  color: #414141;
   transition: 0.3s ease;
 }
 
 #navbar li a:hover,
 #navbar li a.active
 {
-  color: #0f7ec4;
+  color: #0fc454;
 }
 
 #navbar li a.active::after,
@@ -120,7 +145,7 @@ body {
   content: '';
   width: 30%;
   height: 2px;
-  background: #0f7ec4;
+  background: #0fc454;
   position: absolute;
   bottom: -4px;
   left: 20px;
@@ -130,11 +155,25 @@ body {
 
 #hero
 {
-  background-image: url(/img/hero4.png);
+  background-image: url(/img/thomas-van-der-vennet-FF7p8yk27gw-unsplash.jpg);
   height: 90vh;
   width: 100%;
-  background-position: top 25% right 20%;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  
+}
+
+
+.content
+{
+  height: 90vh;
+  width: 100%;
   padding: 0 80px;
+  /* backdrop-filter: blur(15px); */
+  opacity: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -143,25 +182,45 @@ body {
 
 #hero h4
 {
+  font-size: 3rem;
   padding-bottom: 15px;
+  color: rgb(255, 255, 255);
 }
 
 #hero h1
 {
-  color: rgb(228, 72, 0);
+  font-size: 39px;
+  color: #0fc454;
+}
+
+#hero h2
+{
+  padding-top: 12px;
+  padding-bottom: 23px;
+  color: rgb(255, 255, 255);
+  font-size: 4rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+#hero p
+{
+  color: rgb(194, 194, 194);
+  font-size: larger;
 }
 
 #hero button
 {
   background-image: url(/img/button.png);
   background-color: transparent;
-  padding: 14px 80px 14px 65px;
+  padding: 14px 80px 16px 45px;
   background-repeat: no-repeat;
   cursor: pointer;
   outline: none;
   border: none;
+  font-size: 18px;
   font-weight: 700;
-  color: #007ecc;
+  color: #0fc454;
   margin-top: 22px;
 }
 
@@ -169,7 +228,7 @@ body {
 #hero button a 
 {
   text-decoration: none;
-  color: rgb(0, 160, 240);
+  color: #0fc454;
 }
 
 
@@ -192,6 +251,13 @@ body {
   margin: 15px 0;
   transition: 0.1s ease;
 }
+
+#feature .fe-box  img
+{
+  width: 100%;
+  height: 7rem;
+}
+
 
 #feature .fe-box:hover
 {
@@ -357,8 +423,10 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
- background: url(https://img.freepik.com/free-vector/black-banner-with-yellow-geometric-shapes_1017-32327.jpg?auto=format&h=200) no-repeat center;
- background-size: cover;
+  background: #833ab4;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
   width: 100%;
   height: 40vh;
 }
@@ -366,22 +434,181 @@ body {
 
 #banner h4
 {
-  color: rgb(6, 138, 253);
+  color: rgb(243, 243, 243);
   font-size: 20px;
 }
 
 #banner h2
 {
- color: white;
+ color: rgba(255, 247, 247, 0.59);
   padding: 25px 0;
 }
 
 #banner h2 span
 {
-  color: rgb(6, 138, 253);
+  color: rgb(255, 255, 255);
 }
 
 button.normal:hover
 {
-  background-color: #91d5ff;
+  background-color:  #13d62d;
+}
+
+#sm-banner
+{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+
+
+#sm-banner .banner-box
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  background: url(/img/pro/banner2.webp);
+  color: white;
+  background-size: cover;
+  min-width: 600px;
+  height: 40vh;
+  padding: 30px;
+}
+
+#sm-banner h4 
+{
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+#sm-banner h2
+{
+  color: white;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+
+#sm-banner span
+{
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  padding-bottom: 17px;
+}
+
+button.white
+{
+  margin-top: 13px;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 15px 30px;
+  color: rgb(255, 255, 255);
+  background: transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid white;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+
+#sm-banner .banner-box:hover button
+{
+  background:  #00ff222d;
+}
+
+
+#sm-banner .banner-box2
+{
+  background: url(/img/pro/banner1.webp) ;
+  background-size: cover;
+}
+
+
+
+
+/* Banner 3 */
+#banner3
+{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 80px;
+}
+
+#banner3 .banner-box
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  background: url(/img/pro/banner2.webp);
+  color: white;
+  background-size: cover;
+  min-width: 30%;
+  height: 30vh;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+#banner3 h2
+{
+  color: white;
+  font-weight: 900;
+  font-size: 2rem;
+}
+
+#banner3 h3
+{
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+#banner3 .banner-box:hover 
+{
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+
+#banner3  .b-img1
+{
+  background: url(/img/pro/banner1.webp) ;
+  background-size: cover;
+}
+
+#banner3  .b-img2
+{
+  background: url(/img/pro/iphone.webp) ;
+  background-size: cover;
+}
+
+#banner3  .b-img3
+{
+  background: url(/img/pro/one.webp) ;
+  background-size: cover;
+}
+
+
+
+
+
+
+/* Newslatter Style */
+#newslatter
+{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  background-image: url(/img/banner/b14.png);
+  background-repeat: no-repeat;
+  background-position: 20% 30%;
+  background: rgb(255, 255, 255);
 }
